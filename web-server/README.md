@@ -2,7 +2,7 @@
 
 `main.go` starts a basic web server that simulates a store's API. 
 - The database is simulated by a dictionary that maps item names to prices.
-- The API supports calls to list items, add, update, read an item, and delete an item.
+- The API supports calls to list items, read an item, add, update, and delete.
 - The database is initialized with two entries: "shoes": 50 and "socks": 5.
 - There are basic error checks to prevent in each handler. 
 
