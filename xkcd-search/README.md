@@ -11,7 +11,7 @@ read 2864 comics
 
 ```shell
 $ go run ./find/xkcd-find.go ./xkcd.json flinstone
-read 2862 comics
+read 2864 comics
 https://xkcd.com/1491/ 2/25/2015 Stories of the Past and Future
 found 1 comics
 ```
