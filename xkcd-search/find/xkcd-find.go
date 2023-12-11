@@ -39,13 +39,13 @@ func main() {
 	)
 
 	if input, err = os.Open(fn); err != nil {
-		fmt.Fprintf(os.Stderr, "bad file: %s\n", err)
+		fmt.Fprintf(os.Stderr, "file does not exist: %s\n", err)
 		os.Exit(-1)
 	}
 
 	//decode the file
 	if err = json.NewDecoder(input).Decode(&items); err != nil {
-		fmt.Fprintf(os.Stderr, "bad json: %s\n", err)
+		fmt.Fprintf(os.Stderr, "unable to decode json: %s\n", err)
 		os.Exit(-1)
 	}
 
@@ -53,7 +53,7 @@ func main() {
 
 	//get search terms
 	for _, t := range os.Args[2:] {
-		terms = append(terms, strings.ToLower(t))
+		terms = append(terms, strings.ToLower(t)) //conver everything to lowercase for searching
 	}
 
 	//search
@@ -64,11 +64,11 @@ outer:
 
 		for _, term := range terms {
 			if !strings.Contains(title, term) && !strings.Contains(transcript, term) {
-				continue outer
+				continue outer //use the outer key work to skip to the next interation of the outer loop instead of continuing the inner loop
 			}
 		}
 		fmt.Printf("https://xkcd.com/%d/ %s/%s/%s %s\n",
-			item.Num, item.Month, item.Day, item.Year, item.Title)
+			item.Num, item.Month, item.Day, item.Year, item.Title) //allows you to link directly to the comic
 		cnt++
 	}
 
