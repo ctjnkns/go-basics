@@ -5,3 +5,6 @@ Demonstrates usage of go command line arguments, file IO, error handling, http r
 
 ## Web Server
 Demonstrates usage of the http package to start a basic web server and handle API requests. Supports listing, reading, adding, updating, and deleting items using API calls with a simulated store database.
+
+## Web Server Concurrent
+Demonstrates usage of the http package to start a basic web server and handle API requests. Supports listing, reading, adding, updating, and deleting items using API calls with a simulated store database. Adds Mutexes to address concurrecny issues.
